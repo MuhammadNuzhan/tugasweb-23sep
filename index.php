@@ -96,7 +96,7 @@
         <h2 data-aos="zoom-out-down"><span>Kompetensi </span>Keahlian</h2>
 
         <div class="row">
-            <a href="#rpl1">
+            <a href="datarpl.php">
                 <div class="menu-card" data-aos="fade-up-right" data-aos-duration="1800">
                     <img src="image/rpl.png" alt="Espresso" class="menu-card-img">
                     <h3 class="menu-card-title">REKAYASA PERANGKAT LUNAK</h3>
@@ -305,10 +305,10 @@
                 <img src="image/manajemen.png" alt="foto" class="manajemen-logo"> <!-- Ganti "medal.png" dengan URL atau path ke logo medali -->
             </a>
 
-            <a href="#" class="manajemen-box" data-aos="fade-down-left" data-aos-duration="2000">
+            <a href="datarpl.php" class="manajemen-box" data-aos="fade-down-left" data-aos-duration="2000">
                 <div>
                     <div class="manajemen-title">Tenaga Pendidik</div>
-                    <div class="manajemen-description">Terdiri Para guru PNS , Guru tidak tetap GTT, dan Honorer</div>
+                    <div class="manajemen-description">Terdiri Para guru PNS , Guru tidak tetap GTT, dan Honorer setiap Jurusan</div>
                 </div>
                 <img src="image/tenagapendidik.png" alt="foto" class="manajemen-logo"> <!-- Ganti "medal.png" dengan URL atau path ke logo medali -->
             </a>
@@ -357,104 +357,7 @@
     </section>
     <!-- Manajemen End -->
 
-    <!-- Box Section Start -->
-    <section class="ag-box">
-        <div class="ag-offer-block" data-aos="zoom-out-up" data-aos-duration="2000">
-            <div class="ag-format-container">
-                <ul class="ag-offer_list">
-                    <li class="ag-offer_item">
-                        <div class="ag-offer_visible-item">
-                            <div class="ag-offer_img-box">
-                                <img src="image/logosmk4.png" class="ag-offer_img" alt="" />
-                            </div>
-                            <div class="ag-offer_title">
-                                Lorem ipsum
-                            </div>
-                        </div>
-                        <div class="ag-offer_hidden-item">
-                            <p class="ag-offer_text">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="ag-offer_item">
-                        <div class="ag-offer_visible-item">
-                            <div class="ag-offer_img-box">
-                                <img src="image/logosmk4.png" class="ag-offer_img" alt="" />
-                            </div>
-                            <div class="ag-offer_title">
-                                Donec quam
-                            </div>
-                        </div>
-                        <div class="ag-offer_hidden-item">
-                            <p class="ag-offer_text">
-                                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="ag-offer_item">
-                        <div class="ag-offer_visible-item">
-                            <div class="ag-offer_img-box">
-                                <img src="image/logosmk4.png" class="ag-offer_img" alt="" />
-                            </div>
-                            <div class="ag-offer_title">
-                                Donec pede
-                            </div>
-                        </div>
-                        <div class="ag-offer_hidden-item">
-                            <p class="ag-offer_text">
-                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="ag-offer_item">
-                        <div class="ag-offer_visible-item">
-                            <div class="ag-offer_img-box">
-                                <img src="image/logosmk4.png" class="ag-offer_img" alt="" />
-                            </div>
-                            <div class="ag-offer_title">
-                                Cras dapibus
-                            </div>
-                        </div>
-                        <div class="ag-offer_hidden-item">
-                            <p class="ag-offer_text">
-                                Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="ag-offer_item">
-                        <div class="ag-offer_visible-item">
-                            <div class="ag-offer_img-box">
-                                <img src="image/logosmk4.png" class="ag-offer_img" alt="" />
-                            </div>
-                            <div class="ag-offer_title">
-                                Aliquam lorem
-                            </div>
-                        </div>
-                        <div class="ag-offer_hidden-item">
-                            <p class="ag-offer_text">
-                                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="ag-offer_item">
-                        <div class="ag-offer_visible-item">
-                            <div class="ag-offer_img-box">
-                                <img src="image/logosmk4.png" class="ag-offer_img" alt="" />
-                            </div>
-                            <div class="ag-offer_title">Phasellus</div>
-                        </div>
-                        <div class="ag-offer_hidden-item">
-                            <a href="#" class="ag-offer_btn">
-                                Dapibus viverra
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- Box Section End -->
+
     <!-- Contact Start -->
     <section id="contact" class="contact" data-aos="zoom-in" data-aos-duration="1800">
         <h2><span>Kontak </span>Kami</h2>
@@ -463,8 +366,8 @@
         <p>No. Telp : 0511 – 3305054</p>
         <p>Email : info@smkn4bjm.sch.id</p>
         <div class="row">
-            <iframe style="padding-left:2em; padding-top:3em;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.2233415350843!2d114.58753691115857!3d-3.2947890411075282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de423a0b07eb9cd%3A0xc5fc816bceb7bcf7!2sSekolah%20Menengah%20Kejuruan%20Negeri%204%20Banjarmasin!5e0!3m2!1sid!2sid!4v1694750447047!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-aos="zoom-in-right" data-aos-duration="1800"></iframe>
-            <form onsubmit="sendEmail(); reset; return false;" method="post" data-aos="zoom-in-left" data-aos-duration="1800">
+            <iframe style="padding-left:2em; padding-top:6em;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.2233415350843!2d114.58753691115857!3d-3.2947890411075282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de423a0b07eb9cd%3A0xc5fc816bceb7bcf7!2sSekolah%20Menengah%20Kejuruan%20Negeri%204%20Banjarmasin!5e0!3m2!1sid!2sid!4v1694750447047!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-aos="zoom-in-right" data-aos-duration="1800"></iframe>
+            <form action="sendemail.php" method="post" data-aos="zoom-in-left" data-aos-duration="1800">
 
                 <div class="input-group">
                     <i data-feather="user"></i>
@@ -473,11 +376,11 @@
 
                 <div class="input-group">
                     <i data-feather="mail"></i>
-                    <input type="text" id="email" name="email" placeholder="email">
+                    <input type="text" id="email" name="email" placeholder="Email">
                 </div>
 
                 <div class="input-group">
-                    <i data-feather="phone"></i>
+                    <i data-feather="pen-tool"></i>
                     <input type="text" id="subject" name="subjek" placeholder="Subject">
                 </div>
                 <div class="input-group">
@@ -534,7 +437,7 @@
     <script src="js/script.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <script>
+    <!-- <script>
         function sendEmail() {
             Email.send({
                 Host: "smtp.gmail.com",
@@ -552,7 +455,7 @@
                 message => alert("Message Sent Successfuly")
             );
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
