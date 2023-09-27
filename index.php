@@ -371,21 +371,21 @@
 
                 <div class="input-group">
                     <i data-feather="user"></i>
-                    <input type="text" id="nama" name="nama" placeholder="Nama">
+                    <input type="text" id="nama" name="nama" placeholder="Nama" required>
                 </div>
 
                 <div class="input-group">
                     <i data-feather="mail"></i>
-                    <input type="text" id="email" name="email" placeholder="Email">
+                    <input type="text" id="email" name="email" placeholder="Email" required>
                 </div>
 
                 <div class="input-group">
                     <i data-feather="pen-tool"></i>
-                    <input type="text" id="subject" name="subjek" placeholder="Subject">
+                    <input type="text" id="subject" name="subjek" placeholder="Subject" maxlength="50" required>
                 </div>
                 <div class="input-group">
                     <i data-feather="edit"></i>
-                    <input type="text" id="pesan" name="pesan" placeholder="Pesan">
+                    <input type="text" id="pesan" name="pesan" placeholder="Pesan" required>
                 </div>
 
                 <button type="submit" name="send" value="Kirim" class="btn">Kirim Pesan</button>
