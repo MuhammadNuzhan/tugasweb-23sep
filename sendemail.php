@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->isHTML(false);
     $mail->Subject = $subjek;
     $mail->addReplyTo($email_pengirim, $nama);
-    $mail->Body = "Email: $email_pengirim\n";
-    $mail->Body = "Pesan:\n$pesan";
+    $mail->Body = "From: $email_pengirim\n";
+    $mail->Body .= $pesan;
 
     $tujuan = 'muhammadnuzhan27@gmail.com';
 
