@@ -169,7 +169,8 @@ include "koneksi.php";
                                             <i data-feather="menu"></i>
                                         </button>
                                         <ul class="dropdown-menu text-center">
-                                            <a href="#" class="btn btn-warning btn-sm" onclick="ubahData()"><i data-feather="edit"></i></a>
+                                            <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#staticEdit" onclick="editData('<?= $data['Absen'] ?>', '<?= $data['Nama'] ?>', '<?= $data['Usia'] ?>', '<?= $data['Gender'] ?>')"><i data-feather="edit"></i></a>
+
                                             <a href="#" class="btn btn-danger btn-sm " onclick="konfirmasiHapus(<?= $data['Absen'] ?>)"><i data-feather="trash-2"></i></a>
                                         </ul>
                                     </div>
@@ -215,25 +216,155 @@ include "koneksi.php";
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary" name="bsimpan" id="simpan" onclick="simpanData()">Simpan</button>
+                                    <button type="button" class="btn btn-primary" name="bsimpan" id="simpan" onclick="simpanData()">Simpan</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- Modal 2-->
+                <!-- Modal Edit -->
+                <div class="modal fade" id="staticEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticEditLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticEditLabel">Edit Data</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form method="POST" action="editdatarpl.php">
+                                <div class="modal-body">
+                                    <!-- Input field untuk menyimpan ID siswa yang akan diubah -->
+                                    <input type="hidden" name="id_siswa" id="edit_id_siswa">
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Absen</label>
+                                        <input type="text" class="form-control" name="edit_absen" id="edit_absen" placeholder="Nomer Absen">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama</label>
+                                        <input type="text" class="form-control" name="edit_nama" id="edit_nama" placeholder="Nama Lengkap">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Usia</label>
+                                        <input type="text" class="form-control" name="edit_usia" id="edit_usia" placeholder="Usia">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Gender</label>
+                                        <select class="form-select" name="edit_gender" id="edit_gender">
+                                            <option value="Laki-Laki">Laki-Laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-primary" name="bedit" id="bedit" onclick="updateData()">Simpan Perubahan</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
+
     <script>
-        function ubahData() {
-            Swal.fire('Ubah data berhasil!', '', 'success');
+        // Fungsi untuk mengisi data siswa ke dalam modal edit
+        function editData(absen, nama, usia, gender, id_siswa) {
+            document.getElementById('edit_absen').value = absen;
+            document.getElementById('edit_nama').value = nama;
+            document.getElementById('edit_usia').value = usia;
+            document.getElementById('edit_gender').value = gender;
+            document.getElementById('edit_id_siswa').value = id_siswa;
         }
 
-        function simpanData() {
-            Swal.fire('Ubah data berhasil!', '', 'success');
+        // Fungsi untuk mengirim perubahan data siswa ke editdatarpl.php menggunakan AJAX
+        function updateData() {
+            var absen = document.getElementById('edit_absen').value;
+            var nama = document.getElementById('edit_nama').value;
+            var usia = document.getElementById('edit_usia').value;
+            var gender = document.getElementById('edit_gender').value;
+            var id_siswa = document.getElementById('edit_id_siswa').value;
+
+            $.ajax({
+                type: "POST",
+                url: "editdatarpl.php",
+                data: {
+                    bedit: 1,
+                    absen: absen,
+                    nama: nama,
+                    usia: usia,
+                    gender: gender,
+                    id_siswa: id_siswa
+                },
+                success: function(response) {
+                    Swal.fire({
+                        title: 'Data berhasil diperbarui!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'datarpl.php';
+                        }
+                    });
+                },
+                error: function() {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Terjadi masalah saat memperbarui data.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
         }
+    </script>
+
+    <script>
+        function simpanData() {
+            // Ambil data dari formulir
+            var absen = document.getElementsByName('absen')[0].value;
+            var nama = document.getElementsByName('nama')[0].value;
+            var usia = document.getElementsByName('usia')[0].value;
+            var gender = document.getElementsByName('gender')[0].value;
+
+            // Kirim data ke tambahdatarpl.php menggunakan AJAX
+            $.ajax({
+                type: "POST",
+                url: "tambahdatarpl.php",
+                data: {
+                    bsimpan: 1,
+                    absen: absen,
+                    nama: nama,
+                    usia: usia,
+                    gender: gender
+                },
+                success: function(response) {
+                    // Tampilkan SweetAlert
+                    Swal.fire({
+                        title: 'Data berhasil disimpan!',
+
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        // Redirect kembali ke halaman yang menampilkan data
+                        if (result.isConfirmed) {
+                            window.location.href = 'datarpl.php';
+                        }
+                    });
+                },
+                error: function() {
+                    // Tampilkan pesan kesalahan jika terjadi masalah saat mengirim data
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Terjadi masalah saat menyimpan data.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        }
+
 
         function konfirmasiHapus(idAbsen) {
             Swal.fire({
